@@ -1,8 +1,8 @@
 CFLAGS=-g -O3 
 
-all: main 
+all: ui 
 
-main: main.o
+main: ui.o
 	cc $(CFLAGS) $^ -o $@ 
 	
 tester: tester.o
@@ -12,4 +12,4 @@ tester.o: tokenizer.h history.h
 	cc -c tester.c 
 
 clean:
-	rm -f *.o tokenizer main
+	rm -f *.o tokenizer ui
