@@ -47,10 +47,10 @@ int main()
       case (3):
         break;
       case (4):
-        print_tokens(tokens+1);
+        print_tokens(tokens);
         break;
       default:
-        printf("\tinvalid command; -h for help\n");
+        printf("invalid command; -h for help\n");
     }
     free_tokens(tokens);
   }

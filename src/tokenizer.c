@@ -86,7 +86,7 @@ char **tokenize(char *str)
 
 void print_tokens(char **tokens)
 {
-  for (int t = 0; *(tokens+t); t++)
+  for (int t = 1; *(tokens+t); t++) // from 1 to exclude '-t' without misrepresenting indices
   {
     printf("[%d] %s\n", t, *(tokens+t));
   }
@@ -97,7 +97,7 @@ void free_tokens(char **tokens)
   int i = 0;
   do
   {
-    free (tokens[i]);
+    free (*(tokens+i));
     i++;
   } while (*(tokens+i));
   free (tokens);
