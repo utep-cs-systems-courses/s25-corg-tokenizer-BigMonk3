@@ -9,7 +9,7 @@ int main()
   char str[100];
   int f;
 
-  printf("Type any string to be tokenized, -h for help\n");
+  printf("Type a command, '-h' for help\n");
 
   while (1) { // Infinite while loop
 
