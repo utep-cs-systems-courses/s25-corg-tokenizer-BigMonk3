@@ -39,8 +39,8 @@ int main()
       {
         f = 4;
       } else if (!strcmp(*tokens, "exit")) {
-        free_tokens(tokens);
         free_history(history);
+        free_tokens(tokens);
         free(str);
         return 0;
       } else f = -1;
@@ -66,10 +66,11 @@ int main()
             done = 1;
             break;
           }
-          str = get_history(history, id);
-          if (str) {
+          char *hStr = get_history(history, id);
+          if (hStr) {
             free_tokens(tokens);
-            tokens = tokenize(str);
+            tokens = tokenize(hStr);
+            printf("%s", hStr);
             done = 0;
           } else {
             printf("ERROR: Invalid history id\n");
